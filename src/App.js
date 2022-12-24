@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { FaAngleDoubleRight } from "react-icons/fa";
 
+
 const url = "https://course-api.com/react-tabs-project";
+
 function App() {
   const [loading, setLoading] = useState(true);
   const [job, setJob] = useState([]);
@@ -22,17 +24,12 @@ function App() {
   if (loading) {
     return (
       <div className="loading">
-        <h2>Loading...</h2>
+        <h2>Getting data...</h2>
       </div>
     );
   }
 
-  // console.log(job)
-  // job.map((item) =>{
-  //   return item
-  // })
-
-  const {id, company, title, dates, duties} = job[value];
+  const {company, title, dates, duties} = job[value];
 
   return (
     <div className="section">
